@@ -123,6 +123,8 @@ if __name__ == '__main__':
                 })
             time.sleep(1)
             # CO2データを取得し、print関数で表示します
-            print("eCO2: {}".format(e.get_co2()))            
+            print("eCO2: {}".format(e.get_co2()))      
+            # CO2データを取得し、print関数で表示します
+            print("eCO2: {}".format(e.get_temp ()))            
         except KeyboardInterrupt:
             break
