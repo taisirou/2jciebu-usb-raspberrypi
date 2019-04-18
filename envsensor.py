@@ -122,5 +122,7 @@ if __name__ == '__main__':
                     "created": timestamp.strftime("%Y/%m/%d %H:%M:%S")
                 })
             time.sleep(1)
+            print("eCO2: {}".format(e.get_co2()))
+
         except KeyboardInterrupt:
             break
