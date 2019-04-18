@@ -86,7 +86,7 @@ class EnvSensor(threading.Thread):
         return self.co2
 
     def get_temp(self):
-        raise self.temp
+        return self.temp
     
     def get_humi(self):
         raise NotImplementedError()
