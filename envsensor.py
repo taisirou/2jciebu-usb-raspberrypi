@@ -61,7 +61,7 @@ class EnvSensor(threading.Thread):
         """
         self.co2 = int(hex(data[23])+format(data[22], 'x'), 16)
         self.temp = int(hex(data[9])+format(data[8], 'x'), 16)/100
-        self.humi = int(hex(data[11]) + format(data[10], 'x'), 16) / 100)
+        self.humi = int(hex(data[11])+format(data[10], 'x'), 16) / 100)
 
     def _calc_crc(self, buf, length):
         """
