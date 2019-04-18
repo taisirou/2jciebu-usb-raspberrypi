@@ -123,7 +123,7 @@ if __name__ == '__main__':
                 })
             time.sleep(1)
             print("eCO2: {}".format(e.get_co2()))
-            print("temp: {}".format(e.get_temp()))
+          //  print("temp: {}".format(e.get_temp()))
         except KeyboardInterrupt:
             break
             
