@@ -96,6 +96,7 @@ class EnvSensor(threading.Thread):
             スレッドを終了させます
         """
         self.stop = True
+    print("eCO2: {}".format(e.get_co2()))
 
 if __name__ == '__main__':
     try:
@@ -123,9 +124,7 @@ if __name__ == '__main__':
                 })
             time.sleep(1)
             print("eCO2: {}".format(e.get_co2()))
-            time.sleep(1)
-            print("eCO2: {}".format(e.get_co2()))
-
+            
             except KeyboardInterrupt:
             break
             
