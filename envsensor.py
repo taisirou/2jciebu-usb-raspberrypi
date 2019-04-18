@@ -1,7 +1,6 @@
 import serial
 import threading
 import time
-
 import ambient
 import os
 from datetime import datetime
@@ -47,7 +46,6 @@ class EnvSensor(threading.Thread):
             最新のセンサーデータを`latest_short`フォーマット
             で取得します。詳しくはユーザーマニュアルの77pを
             参照してください
-
             https://omronfs.omron.com/ja_JP/ecb/products/pdf/CDSC-016A-web1.pdf
         """
         command = bytearray([0x52, 0x42, 0x05, 0x00, 0x01, 0x22, 0x50])
@@ -67,7 +65,6 @@ class EnvSensor(threading.Thread):
         """
             データの誤りを検出させるために、CRC演算を行います。
             演算方法の詳細はユーザーマニュアルの68pを参照してください
-
             https://omronfs.omron.com/ja_JP/ecb/products/pdf/CDSC-016A-web1.pdf
         """
         crc = 0xFFFF
@@ -101,20 +98,20 @@ class EnvSensor(threading.Thread):
         self.stop = True
 
 if __name__ == '__main__':
-      try:
+    try:
         CHANNEL_ID = int(os.environ['AMBIENT_CHANNEL_ID'])
         WRITE_KEY = os.environ['AMBIENT_WRITE_KEY']
     except KeyError as e:
-        print('Missing environment variable: '.format(e))
+        print('Missing environment variable: {}'.format(e))
         exit(1)
-        
+
     am = ambient.Ambient(CHANNEL_ID, WRITE_KEY)
 
     # EnvSensorクラスの実体を作成します
     e = EnvSensor()
     # スレッドとして処理を開始します
     e.start()
-    
+
     last_uploaded = datetime.now()
     while True:
         try:
