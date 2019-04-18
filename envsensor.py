@@ -114,8 +114,7 @@ if __name__ == '__main__':
     e = EnvSensor()
     # スレッドとして処理を開始します
     e.start()
-
-    while True:
+    
             last_uploaded = datetime.now()
     while True:
         try:
