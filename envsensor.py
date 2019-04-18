@@ -119,6 +119,8 @@ if __name__ == '__main__':
             if (timestamp - last_uploaded).seconds > 10:
                  am.send({
                     "d1": e.get_co2(),
+                                         "d2": e.get_temp(),
+
                     "created": timestamp.strftime("%Y/%m/%d %H:%M:%S")
                 })
             time.sleep(1)
