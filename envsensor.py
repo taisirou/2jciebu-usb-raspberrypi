@@ -96,7 +96,6 @@ class EnvSensor(threading.Thread):
             スレッドを終了させます
         """
         self.stop = True
-    print("eCO2: {}".format(e.get_co2()))
 
 if __name__ == '__main__':
     try:
@@ -122,8 +121,6 @@ if __name__ == '__main__':
                     "d1": e.get_co2(),
                     "created": timestamp.strftime("%Y/%m/%d %H:%M:%S")
                 })
-            time.sleep()
-            # CO2データを取得し、print関数で表示します
-            print("eCO2: {}".format(e.get_co2()))
+            time.sleep(1)
         except KeyboardInterrupt:
             break
