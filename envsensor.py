@@ -23,7 +23,7 @@ class EnvSensor(threading.Thread):
         # 各センサー値を格納する変数
         self.co2 = None
         self.temp = None
-        self.humidity = None
+        self.humi = None
 
     def run(self):
         """
@@ -90,11 +90,8 @@ class EnvSensor(threading.Thread):
     def get_temp(self):
         return self.temp
     
-    def get_humidity(self):
-        return self.humidity
-    
     def get_humi(self):
-        raise NotImplementedError()
+        return self.humi
 
     def stop(self):
         """
@@ -134,6 +131,6 @@ if __name__ == '__main__':
             # CO2データを取得し、print関数で表示します
             print("Temp: {}".format(e.get_temp()))            
             # CO2データを取得し、print関数で表示します
-            print("humidity: {}".format(e.get_humidity()))     
+            print("humidity: {}".format(e.get_humi()))     
         except KeyboardInterrupt:
             break
