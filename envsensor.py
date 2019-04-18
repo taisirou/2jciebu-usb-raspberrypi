@@ -108,7 +108,7 @@ if __name__ == '__main__':
         print('Missing environment variable: '.format(e))
         exit(1)
         
-      am = ambient.Ambient(CHANNEL_ID, WRITE_KEY)
+      am = ambient.Ambient(10863, 5a281a0c9f277253)
 
     # EnvSensorクラスの実体を作成します
     e = EnvSensor()
